@@ -13,6 +13,7 @@ type
     ComboBox1: TComboBox;
     Memo1: TMemo;
     procedure Button1Click(Sender: TObject);
+    procedure ListBox1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,6 +35,15 @@ begin
  ListBox1.Clear;
  ListBox1.Items.AddStrings(TStyleManager.StyleNames);
  ListBox1.ItemIndex := ListBox1.Items.IndexOf(TStyleManager.ActiveStyle.Name);
+
+end;
+
+procedure TForm1.ListBox1Click(Sender: TObject);
+begin
+    //verifica qual o item Index  se é maior ou igual a 0
+    //  Seta o item selecionado no listBox
+       if ListBox1.ItemIndex >=0  then
+       TStyleManager.SetStyle(ListBox1.Items[ListBox1.ItemIndex]);
 
 end;
 

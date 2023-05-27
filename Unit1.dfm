@@ -18,6 +18,7 @@ object Form1: TForm1
     Height = 289
     ItemHeight = 15
     TabOrder = 0
+    OnClick = ListBox1Click
   end
   object Button1: TButton
     Left = 256
