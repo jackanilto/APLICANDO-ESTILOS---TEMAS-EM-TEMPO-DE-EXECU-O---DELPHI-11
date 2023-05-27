@@ -9,15 +9,14 @@ uses
 type
   TForm1 = class(TForm)
     ListBox1: TListBox;
-    Button1: TButton;
-    ComboBox1: TComboBox;
-    Memo1: TMemo;
     procedure Button1Click(Sender: TObject);
     procedure ListBox1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+    procedure CarregarTemas;
   end;
 
 var
@@ -32,10 +31,25 @@ Uses Vcl.Themes;
 procedure TForm1.Button1Click(Sender: TObject);
 begin
  //   Lista os temas no list box
+// ListBox1.Clear;
+// ListBox1.Items.AddStrings(TStyleManager.StyleNames);
+// ListBox1.ItemIndex := ListBox1.Items.IndexOf(TStyleManager.ActiveStyle.Name);
+
+end;
+
+procedure TForm1.CarregarTemas;
+begin
+ //   Lista os temas no list box
  ListBox1.Clear;
  ListBox1.Items.AddStrings(TStyleManager.StyleNames);
  ListBox1.ItemIndex := ListBox1.Items.IndexOf(TStyleManager.ActiveStyle.Name);
 
+
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+      CarregarTemas;
 end;
 
 procedure TForm1.ListBox1Click(Sender: TObject);
